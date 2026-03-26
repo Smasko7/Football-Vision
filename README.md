@@ -228,6 +228,12 @@ FootballVision/
 
 ---
 
+## 🙏 Acknowledgements
+
+This project is heavily based on the [roboflow/sports](https://github.com/roboflow/sports) repository by [Roboflow](https://roboflow.com). The core pipeline design, pitch projection logic, team classification approach, and the bundled `sports/` library all originate from that work. This repo extends it with a structured application package, a unified CLI, and a YAML-based configuration system.
+
+---
+
 ## ⚠️ Known Limitations
 
 - **GPU strongly recommended** for `team_video`, `radar_frame`, and `radar_video` — SigLIP embedding extraction is slow on CPU.
