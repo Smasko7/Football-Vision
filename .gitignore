@@ -1,2 +1,25 @@
 # Ignore PyCharm project files
 .idea/
+
+# Secrets — never commit these
+.env
+
+# Claude Code instructions (local only)
+CLAUDE.md
+
+# Internal architecture docs (local only)
+ARCHITECTURE.md
+
+# Generated outputs
+outputs/
+
+# Training datasets (too large for git)
+datasets/
+
+# Python / ML artifacts
+__pycache__/
+*.py[cod]
+*.pt
+*.onnx
+*.npy
+runs/

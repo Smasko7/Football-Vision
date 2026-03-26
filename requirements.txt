@@ -1,0 +1,23 @@
+# Core inference & detection
+supervision
+inference
+ultralytics
+
+# Team classification
+torch
+transformers
+umap-learn
+scikit-learn
+
+# Utilities
+python-dotenv
+numpy
+opencv-python
+tqdm
+pyyaml
+more-itertools
+sentencepiece
+protobuf
+
+# Sports analytics library (local)
+# Install separately with: pip install -e sports/

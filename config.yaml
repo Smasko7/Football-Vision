@@ -1,0 +1,85 @@
+# ──────────────────────────────────────────────
+# FootballVision configuration
+# Override roboflow_api_key by setting the
+# environment variable ROBOFLOW_API_KEY
+# ──────────────────────────────────────────────
+
+# Video I/O
+# Place your source video in the videos/ folder and update the path below
+source_video_path: "videos/Demo_Video.mp4"
+# target_video_path is auto-generated as outputs/<source_stem>_<mode>.mp4
+# Set this only if you want to override the auto-generated name
+target_video_path: ""
+
+# Roboflow
+roboflow_api_key: ""  # Set via ROBOFLOW_API_KEY environment variable
+player_detection_model_id: "football-players-detection-3zvbc/15"
+field_detection_model_id: "football-field-detection-f07vi/14"
+
+# ──────────────────────────────────────────────
+# Training
+# ──────────────────────────────────────────────
+
+# Path to the data.yaml of the dataset you want to train on
+# Place your dataset in datasets/ following YOLO format (see README)
+dataset_path: "datasets/football-players-detection-dataset/versions/1/data.yaml"
+
+# Pretrained weights to fine-tune from
+base_model: "models/yolo11n.pt"
+
+# Path to a locally trained model to use for inference instead of the Roboflow API
+# Leave empty to use the Roboflow API model (default)
+# e.g. "models/football-players-detection-dataset_yolo11n.pt"
+trained_model_path: ""
+
+training_epochs: 2
+training_batch: 2
+training_imgsz: 640
+training_device: "cpu"     # "cpu" or "0" for first GPU
+export_format: "pt"        # "pt" (PyTorch) or "onnx"
+
+# Detection thresholds
+detection_confidence: 0.3
+nms_threshold: 0.5
+ball_pad_px: 10
+
+# Class IDs (as defined by the Roboflow model)
+ball_id: 0
+goalkeeper_id: 1
+player_id: 2
+referee_id: 3
+
+# Team classifier
+siglip_model_path: "google/siglip-base-patch16-224"
+team_classifier_batch_size: 32
+umap_components: 3
+n_teams: 2
+embedding_stride: 30   # sample every N frames when collecting crops
+
+# Embeddings cache file (used by team_split mode)
+embeddings_path: "embeddings/siglip_embeddings.npy"
+
+# Per-mode frame limits
+annotation_frame_limit: 750    # ~10 s at 75 fps
+tracking_frame_limit: 250
+radar_frame_limit: 250
+team_video_frame_limit: 10
+
+# Annotator colours (hex, no #)
+color_team_0: "00BFFF"
+color_team_1: "FF1493"
+color_ball: "FFD700"
+color_referee: "FFD700"
+color_box_palette:
+  - "FF8C00"
+  - "00BFFF"
+  - "FF1493"
+  - "FFD700"
+
+# Annotator geometry
+ellipse_thickness: 2
+triangle_base: 25
+triangle_height: 21
+triangle_outline_thickness: 1
+keypoint_radius: 8
+keypoint_confidence_threshold: 0.5
