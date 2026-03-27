@@ -2,12 +2,18 @@
 
 A computer vision pipeline for analysing football (soccer) match footage. Given a video of a match, it detects players, tracks them across frames, classifies them into teams, and projects their positions onto a 2D pitch radar view in real time.
 
+<img width="800" alt="Στιγμιότυπο οθόνης (281)" src="https://github.com/user-attachments/assets/d9f32bcc-6779-4952-9f87-3672b04b4c52" />
+
+
 **What you get:**
 - 🟦 Bounding-box and game-style (ellipse/triangle) player annotations
 - 🔢 Per-player tracking IDs via ByteTrack
 - 👕 Automatic two-team colour separation — no manual labelling required
 - 🗺️ 2D minimap / radar view with Voronoi territorial diagrams
 - 🎬 Annotated video output for any of the above
+
+---
+<img width="800" alt="Στιγμιότυπο οθόνης (282)" src="https://github.com/user-attachments/assets/73ab5360-6daa-46f7-b124-0c4e45ef74fd" />
 
 ---
 
@@ -136,6 +142,9 @@ All settings live in `config.yaml`. The most commonly changed values are:
 | `color_team_1` | hex string | `FF1493` | Team 1 colour (pink) |
 
 For the full list of settings see `config.yaml`.
+
+---
+<img width="800" alt="Στιγμιότυπο οθόνης (283)" src="https://github.com/user-attachments/assets/b75ada9b-ddb5-4f78-945a-710e7385d863" />
 
 ---
 
